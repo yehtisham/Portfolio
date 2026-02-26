@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Muhammad Yahya – Analytics Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+      background: #0f172a;
+      color: #e5e7eb;
+    }
+    a { color: #38bdf8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header, main, footer {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem;
+    }
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      border-bottom: 1px solid #1f2937;
+    }
+    .name-block h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+    }
+    .name-block p {
+      font-size: 0.95rem;
+      color: #9ca3af;
+    }
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .chip {
+      border-radius: 999px;
+      border: 1px solid #374151;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    h2 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      margin-top: 1.5rem;
+      border-bottom: 1px solid #1f2937;
+      padding-bottom: 0.25rem;
+    }
+    .section-desc {
+      font-size: 0.9rem;
+      color: #9ca3af;
+      margin-bottom: 0.75rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    .card {
+      background: #020617;
+      border-radius: 0.75rem;
+      border: 1px solid #1f2937;
+      padding: 1rem;
+    }
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.35rem;
+    }
+    .meta {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-bottom: 0.5rem;
+    }
+    .card ul {
+      list-style: disc;
+      padding-left: 1.1rem;
+      font-size: 0.85rem;
+    }
+    .tag-row {
+      margin-top: 0.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+    }
+    .tag {
+      border-radius: 999px;
+      border: 1px solid #374151;
+      padding: 0.15rem 0.6rem;
+      color: #9ca3af;
+    }
+    footer {
+      font-size: 0.8rem;
+      color: #6b7280;
+      text-align: center;
+      border-top: 1px solid #1f2937;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="name-block">
+      <h1>Muhammad Yahya</h1>
+      <p>Business & data analyst · Knox College ’26 · Chicago, IL</p>
+    </div>
+    <div class="links">
+      <a class="chip" href="https://www.linkedin.com/">LinkedIn</a>
+      <a class="chip" href="https://github.com/">GitHub</a>
+      <a class="chip" href="YahyaResume.pdf">Resume (PDF)</a>
+      <a class="chip" href="mailto:YOUR_EMAIL_HERE">Email</a>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Projects</h2>
+      <p class="section-desc">Work in SQL, Python, and BI focused on revenue, operations, and product analytics.</p>
+      <div class="grid">
+        <article class="card">
+          <h3>GTM Analytics Warehouse (SQL)</h3>
+          <p class="meta">PostgreSQL · SQL · Synthetic CRM data</p>
+          <ul>
+            <li>Designed a 6-table SaaS CRM & product-usage schema and loaded sample data.</li>
+            <li>Wrote SQL queries and views for win rate, pipeline velocity, and account scoring.</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">SQL</span><span class="tag">Data Modeling</span><span class="tag">BI</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Ledger Automation – Predictive Intelligence System</h3>
+          <p class="meta">Python · Client project</p>
+          <ul>
+            <li>Automated ingestion and classification of cashbook entries from multiple ledgers.</li>
+            <li>Produced cash-flow summaries and spend trends for management.</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">Python</span><span class="tag">Forecasting</span><span class="tag">Finance</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Netflix Recommendation Engine</h3>
+          <p class="meta">Python · ML</p>
+          <ul>
+            <li>Combined content similarity and ML models to generate ranked top-10 recommendations.</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">Python</span><span class="tag">Machine Learning</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Experience & Education</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>RainFocus – Business Systems Intern & Administrator</h3>
+          <p class="meta">Summer 2025 · SaaS events platform</p>
+          <ul>
+            <li>Worked with Salesforce, Marketo, and ZoomInfo data for GTM analytics.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Knox College – BA Integrative Business & Data Science</h3>
+          <p class="meta">Expected June 2026</p>
+          <ul>
+            <li>Relevant coursework: Database Systems, Data Mining, Probability & Statistics, Finance.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p class="section-desc">
+        Open to entry-level data, business, and operations analyst roles.  
+        Email: <a href="mailto:YOUR_EMAIL_HERE">YOUR_EMAIL_HERE</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Muhammad Yahya</p>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </footer>
+</body>
+</html>
