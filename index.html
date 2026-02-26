@@ -99,6 +99,24 @@
       padding: 0.15rem 0.6rem;
       color: #9ca3af;
     }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #374151;
+      background: #ffffff;
+    }
+    .summary {
+      font-size: 0.9rem;
+      color: #9ca3af;
+      margin-top: 0.4rem;
+    }
     footer {
       font-size: 0.8rem;
       color: #6b7280;
@@ -109,10 +127,16 @@
   </style>
 </head>
 <body>
-  <header>
-    <div class="name-block">
-      <h1>Muhammad Yahya</h1>
-      <p>Business & data analyst · Knox College ’26 · Chicago, IL</p>
+   <header>
+    <div class="header-left">
+      <img src="profile.jpg" alt="Muhammad Yahya" class="avatar">
+      <div class="name-block">
+        <h1>Muhammad Yahya</h1>
+        <p>Business & data analyst · Knox College ’26 · Chicago, IL</p>
+        <p class="summary">
+          I work at the intersection of business and data, using SQL, Python, and BI tools to turn GTM, finance, and product data into clear, actionable insights. Currently seeking entry-level Data/Business Analyst roles (OPT eligible).
+        </p>
+      </div>
     </div>
     <div class="links">
       <a class="chip" href="https://www.linkedin.com/in/yahyaehtisham">LinkedIn</a>
