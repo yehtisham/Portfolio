@@ -1,246 +1,901 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Muhammad Yahya – Analytics Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.5;
-      background: #0f172a;
-      color: #e5e7eb;
-    }
-    a { color: #38bdf8; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    header, main, footer {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 1.5rem 1rem;
-    }
-    header {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      border-bottom: 1px solid #1f2937;
-    }
-    .name-block h1 {
-      font-size: 1.75rem;
-      font-weight: 700;
-    }
-    .name-block p {
-      font-size: 0.95rem;
-      color: #9ca3af;
-    }
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-    .chip {
-      border-radius: 999px;
-      border: 1px solid #374151;
-      padding: 0.35rem 0.85rem;
-      font-size: 0.85rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-    h2 {
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
-      margin-top: 1.5rem;
-      border-bottom: 1px solid #1f2937;
-      padding-bottom: 0.25rem;
-    }
-    .section-desc {
-      font-size: 0.9rem;
-      color: #9ca3af;
-      margin-bottom: 0.75rem;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1rem;
-    }
-    .card {
-      background: #020617;
-      border-radius: 0.75rem;
-      border: 1px solid #1f2937;
-      padding: 1rem;
-    }
-    .card h3 {
-      font-size: 1rem;
-      margin-bottom: 0.35rem;
-    }
-    .meta {
-      font-size: 0.8rem;
-      color: #9ca3af;
-      margin-bottom: 0.5rem;
-    }
-    .card ul {
-      list-style: disc;
-      padding-left: 1.1rem;
-      font-size: 0.85rem;
-    }
-    .tag-row {
-      margin-top: 0.75rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      font-size: 0.75rem;
-    }
-    .tag {
-      border-radius: 999px;
-      border: 1px solid #374151;
-      padding: 0.15rem 0.6rem;
-      color: #9ca3af;
-    }
-    .header-left {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    .avatar {
-      width: 96px;
-      height: 96px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid #374151;
-      background: #ffffff;
-    }
-    .summary {
-      font-size: 0.9rem;
-      color: #9ca3af;
-      margin-top: 0.4rem;
-    }
-    footer {
-      font-size: 0.8rem;
-      color: #6b7280;
-      text-align: center;
-      border-top: 1px solid #1f2937;
-      margin-top: 2rem;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Muhammad Yahya — Data & Business Analyst</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #05070f;
+  --surface: #0c1120;
+  --surface2: #111827;
+  --border: rgba(255,255,255,0.07);
+  --border-hover: rgba(99,210,185,0.4);
+  --text: #f0f2f7;
+  --muted: #8892a4;
+  --accent: #63d2b9;
+  --accent2: #f5a623;
+  --accent3: #a78bfa;
+  --red: #f87171;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ── NOISE OVERLAY ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── GLOW ── */
+.glow-orb {
+  position: fixed;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(99,210,185,0.06) 0%, transparent 70%);
+  top: -200px; right: -200px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 2.5rem;
+  background: rgba(5,7,15,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.15rem;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+
+.nav-links {
+  display: flex; gap: 2rem; list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--accent); }
+
+/* ── HERO ── */
+#hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding: 7rem 2.5rem 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative; z-index: 1;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 4rem;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--accent);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: flex; align-items: center; gap: 0.75rem;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 28px; height: 1px;
+  background: var(--accent);
+}
+
+h1.hero-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2.8rem, 6vw, 4.8rem);
+  line-height: 1.05;
+  margin-bottom: 0.3rem;
+  color: var(--text);
+}
+
+h1.hero-name em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hero-title {
+  font-size: 1rem;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+
+.hero-desc {
+  font-size: 1.05rem;
+  color: #b0bcc8;
+  max-width: 520px;
+  margin-bottom: 2.5rem;
+  line-height: 1.75;
+}
+
+.hero-cta {
+  display: flex; flex-wrap: wrap; gap: 1rem;
+}
+
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--accent);
+  color: #05070f;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  padding: 0.75rem 1.6rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+
+.btn-outline {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: transparent;
+  color: var(--text);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  padding: 0.75rem 1.6rem;
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.15);
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+/* avatar */
+.avatar-wrap {
+  position: relative;
+  display: flex; justify-content: center;
+}
+
+.avatar-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  border: 1px solid rgba(99,210,185,0.2);
+}
+
+.avatar-wrap::after {
+  content: '';
+  position: absolute;
+  inset: -24px;
+  border-radius: 50%;
+  border: 1px solid rgba(99,210,185,0.08);
+}
+
+.avatar {
+  width: 220px; height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(99,210,185,0.3);
+  display: block;
+}
+
+/* stat pills */
+.stat-row {
+  display: flex; gap: 1.25rem; flex-wrap: wrap;
+  margin-top: 2.5rem;
+}
+
+.stat-pill {
+  display: flex; flex-direction: column;
+  padding: 0.6rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.stat-pill strong {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.35rem;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.stat-pill span {
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-top: 0.15rem;
+}
+
+/* ── SECTION SHARED ── */
+section {
+  position: relative; z-index: 1;
+  padding: 5rem 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--accent);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  display: flex; align-items: center; gap: 0.75rem;
+}
+
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 20px; height: 1px;
+  background: var(--accent);
+}
+
+h2.section-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+}
+
+.section-sub {
+  font-size: 0.95rem;
+  color: var(--muted);
+  max-width: 500px;
+  margin-bottom: 3rem;
+}
+
+/* ── SKILLS STRIP ── */
+#skills {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 3rem 2.5rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.skill-group h4 {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent2);
+  margin-bottom: 0.75rem;
+}
+
+.skill-tags {
+  display: flex; flex-wrap: wrap; gap: 0.4rem;
+}
+
+.skill-tag {
+  font-size: 0.78rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  background: var(--surface);
+  letter-spacing: 0.02em;
+}
+
+/* ── EXPERIENCE ── */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 8px; bottom: 8px;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+}
+
+.tl-item {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-left: 1.5rem;
+}
+
+.tl-item::before {
+  content: '';
+  position: absolute;
+  left: -2rem; top: 8px;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px rgba(99,210,185,0.5);
+}
+
+.tl-meta {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  margin-bottom: 0.35rem;
+}
+
+.tl-company {
+  font-size: 0.78rem;
+  color: var(--accent);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 0.15rem;
+}
+
+.tl-role {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+}
+
+.tl-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tl-bullets li {
+  font-size: 0.88rem;
+  color: #a0aec0;
+  padding-left: 1.1rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.tl-bullets li::before {
+  content: '▸';
+  position: absolute; left: 0;
+  color: var(--accent);
+  font-size: 0.7rem;
+  top: 0.15rem;
+}
+
+.tl-bullets li strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.tags {
+  display: flex; flex-wrap: wrap; gap: 0.4rem;
+  margin-top: 0.9rem;
+}
+
+.tag {
+  font-size: 0.7rem;
+  font-family: 'DM Mono', monospace;
+  padding: 0.2rem 0.55rem;
+  border-radius: 3px;
+  border: 1px solid rgba(99,210,185,0.2);
+  color: rgba(99,210,185,0.7);
+  background: rgba(99,210,185,0.05);
+}
+
+/* ── PROJECTS ── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 1.25rem;
+}
+
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.25s, transform 0.25s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.project-card:hover {
+  border-color: rgba(99,210,185,0.3);
+  transform: translateY(-3px);
+}
+
+.project-card:hover::before { opacity: 1; }
+
+.proj-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.proj-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.15rem;
+  margin-bottom: 0.4rem;
+}
+
+.proj-context {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--accent2);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.proj-desc {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+
+.proj-metric {
+  display: inline-block;
+  font-size: 0.78rem;
+  padding: 0.25rem 0.7rem;
+  background: rgba(99,210,185,0.08);
+  border: 1px solid rgba(99,210,185,0.2);
+  border-radius: 4px;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
+/* ── EDUCATION ── */
+.edu-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.75rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: start;
+  margin-bottom: 1.25rem;
+}
+
+.edu-school {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.3rem;
+  margin-bottom: 0.2rem;
+}
+
+.edu-degree {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+.edu-highlights {
+  display: flex; flex-wrap: wrap; gap: 0.4rem;
+}
+
+.edu-badge {
+  font-size: 0.72rem;
+  padding: 0.2rem 0.65rem;
+  border-radius: 3px;
+  background: rgba(167,139,250,0.1);
+  border: 1px solid rgba(167,139,250,0.2);
+  color: var(--accent3);
+}
+
+.edu-year {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* ── CONTACT ── */
+#contact {
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.contact-link {
+  display: flex; align-items: center; gap: 0.6rem;
+  padding: 0.7rem 1.4rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: border-color 0.2s, color 0.2s, transform 0.2s;
+  background: var(--surface);
+}
+
+.contact-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.contact-link .link-icon { font-size: 1rem; }
+
+/* ── FOOTER ── */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  border-top: 1px solid var(--border);
+  position: relative; z-index: 1;
+}
+
+/* ── FADE-IN ── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 720px) {
+  nav { padding: 1rem 1.25rem; }
+  .nav-links { display: none; }
+  .hero-inner { grid-template-columns: 1fr; }
+  .avatar-wrap { order: -1; }
+  .avatar { width: 140px; height: 140px; }
+  section { padding: 3.5rem 1.25rem; }
+  #skills { padding: 2.5rem 1.25rem; }
+  .edu-card { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 <body>
-   <header>
-    <div class="header-left">
-      <img src="profile.jpg" alt="Muhammad Yahya" class="avatar">
-      <div class="name-block">
-        <h1>Muhammad Yahya</h1>
-        <p>Business & data analyst · Knox College ’26 · Chicago, IL</p>
-        <p class="summary">
-          I work at the intersection of business and data, using SQL, Python, and BI tools to turn GTM, finance, and product data into clear, actionable insights. Currently seeking Data/Business Analyst roles.
-        </p>
-      </div>
-    </div>
-    <div class="links">
-      <a class="chip" href="https://www.linkedin.com/in/yahyaehtisham">LinkedIn</a>
-      <a class="chip" href="https://github.com/yehtisham">GitHub</a>
-      <a class="chip" href="YahyaResume.pdf">Resume (PDF)</a>
-      <a class="chip" href="mailto:yahyaehtisham2004@gmail.com">Email</a>
-    </div>
-  </header>
 
-  <main>
-    <!-- EXPERIENCE & EDUCATION FIRST -->
-    <section>
-      <h2>Experience & Education</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>RainFocus – Business Systems Intern & Administrator</h3>
-          <p class="meta">Summer 2025 · SaaS events platform</p>
-          <ul>
-            <li>Built a machine-learning account-scoring pipeline to support internal sales prioritization analysis</li>
-            <li>Resolved Salesforce and JIRA requests to streamline internal workflows</li>
-          </ul>
-          <div class="tag-row">
-            <span class="tag">Python</span><span class="tag">Salesforce</span><span class="tag">Looker</span>
-          </div>
-        </article>
-        
-        <article class="card">
-          <h3>PepsiCo - Sales & Insights Intern</h3>
-          <p class="meta">Summer 2024  · Food & Beverage </p>
-          <ul>
-            <li>Analyzed bakery markets to support PepsiCo’s goal of driving 10% regional revenue growth.</li>
-            <li>Built a Tableau dashboard using SQL to show sales trends, informing regional distribution decisions.</li>
-          </ul>
-          <div class="tag-row">
-            <span class="tag">SQL</span><span class="tag">Tableau</span><span class="tag">KPIs</span>
-          </div>
-        </article>
+<div class="glow-orb"></div>
 
-        <article class="card">
-          <h3>Knox College – BA Integrative Business & Data Science</h3>
-          <p class="meta">Expected June 2026</p>
-          <ul>
-            <li>Relevant coursework: Database Systems, Data Mining, Probability & Statistics, Finance.</li>
-            <li>Knox Trustees Distinguished Scholarship.</li>
-            <li>Tennis Club Treasurer, Resident Assistant, Campus life Assistant.</li>
-          </ul>
-        </article>
-      </div>
-    </section>
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">MY.</span>
+  <ul class="nav-links">
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-    <!-- THEN PROJECTS -->
-    <section>
-      <h2>Projects</h2>
-      <p class="section-desc">Work in SQL, Python, and BI focused on revenue, operations, and product analytics.</p>
-      <div class="grid">
-        <article class="card">
-          <h3>SaaS Analytics Warehouse(SQL)</h3>
-          <p class="meta">PostgreSQL · SQL · CRM data</p>
-          <ul>
-            <li>Developed a SaaS analytics warehouse in SQLite and to compute analytical behaviour.</li>
-            <li>Designed a Power BI dashboard to surface at-risk customers, enabling 18% of accounts showing payment risk and 12% high-usage/low-revenue expansion opportunities.</li>
-          </ul>
-          <div class="tag-row">
-            <span class="tag">SQL</span><span class="tag">Data Modeling</span><span class="tag">BI</span>
-          </div>
-        </article>
-
-        <article class="card">
-          <h3>Ledger Automation – Predictive Intelligence System</h3>
-          <p class="meta">Python · Client project</p>
-          <ul>
-            <li>Automated ingestion and classification of cashbook entries from multiple ledgers.</li>
-            <li>Produced cash-flow summaries and spend trends for management.</li>
-          </ul>
-          <div class="tag-row">
-            <span class="tag">Python</span><span class="tag">Forecasting</span><span class="tag">Finance</span>
-          </div>
-        </article>
-
-        <article class="card">
-          <h3>Netflix Recommendation Engine</h3>
-          <p class="meta">Python · ML</p>
-          <ul>
-            <li>Built an end-to-end content-based recommender system with a modular scoring pipeline.</li>
-            <li>Developed a user-input interface that generated personalized recommendations via a streamlined API.</li>
-          </ul>
-          <div class="tag-row">
-            <span class="tag">Python</span><span class="tag">Machine Learning</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section>
-      <h2>Contact</h2>
-      <p class="section-desc">  
-        Email: <a href="mailto:yahyaehtisham2004@gmail.com">yahyaehtisham2004@gmail.com</a>
+<!-- HERO -->
+<div id="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Open to work · Chicago area</p>
+      <h1 class="hero-name">Muhammad<br><em>Yahya</em></h1>
+      <p class="hero-title">Data & Business Analyst · Knox College '26</p>
+      <p class="hero-desc">
+        I turn messy business data into decisions that actually move the needle — through SQL pipelines, ML models, and BI dashboards that connect GTM, finance, and product signals.
       </p>
-    </section>
-  </main>
+      <div class="hero-cta">
+        <a href="YahyaResume.pdf" class="btn-primary">Download Resume</a>
+        <a href="#contact" class="btn-outline">Get in Touch</a>
+      </div>
+      <div class="stat-row">
+        <div class="stat-pill"><strong>3</strong><span>Internships</span></div>
+        <div class="stat-pill"><strong>3</strong><span>BI Platforms</span></div>
+      </div>
+    </div>
+    <div class="avatar-wrap">
+      <img src="profile.jpg" alt="Muhammad Yahya" class="avatar">
+    </div>
+  </div>
+</div>
 
-  <footer>
-    <p>© <span id="year"></span> Muhammad Yahya</p>
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-  </footer>
+<!-- SKILLS -->
+<div id="skills">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="section-label">Technical Stack</p>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h4>Languages & Querying</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">R</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>ML & Analytics</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">scikit-learn</span>
+          <span class="skill-tag">XGBoost</span>
+          <span class="skill-tag">pandas</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>BI & Visualization</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Tableau</span>
+          <span class="skill-tag">Power BI</span>
+          <span class="skill-tag">Looker Studio</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>CRM & GTM Tools</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Salesforce</span>
+          <span class="skill-tag">Marketo</span>
+          <span class="skill-tag">ZoomInfo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <p class="section-label">Work Experience</p>
+  <h2 class="section-title">Where I've Delivered</h2>
+  <p class="section-sub">Two years of real-world analytics across SaaS, FMCG, and public health.</p>
+
+  <div class="timeline">
+
+    <div class="tl-item fade-in">
+      <p class="tl-meta">Summer 2025 · Lehi, UT (Remote)</p>
+      <p class="tl-company">RainFocus — SaaS Events Platform</p>
+      <h3 class="tl-role">Business Systems Intern & Admin</h3>
+      <ul class="tl-bullets">
+        <li>Built an <strong>XGBoost account-scoring pipeline</strong> achieving ~68% F1, prioritizing the sales team's outreach across 10K+ CRM records.</li>
+        <li>Designed <strong>Looker Studio dashboards</strong> integrating Salesforce + Marketo + ZoomInfo data for GTM visibility.</li>
+        <li>Resolved 40+ Salesforce and JIRA workflow tickets, reducing ops team resolution time by streamlining internal processes.</li>
+        <li>Conducted UAT testing and supported Marketo campaign logic audits across lifecycle stages.</li>
+      </ul>
+      <div class="tags">
+        <span class="tag">XGBoost</span><span class="tag">Salesforce</span><span class="tag">Marketo</span><span class="tag">Looker</span><span class="tag">JIRA</span><span class="tag">ZoomInfo</span>
+      </div>
+    </div>
+
+    <div class="tl-item fade-in">
+      <p class="tl-meta">Summer 2024 · Chicago, IL</p>
+      <p class="tl-company">PepsiCo — Sales & Insights</p>
+      <h3 class="tl-role">Sales & Insights Intern</h3>
+      <ul class="tl-bullets">
+        <li>Analyzed bakery market data to support a <strong>10% regional revenue growth</strong> initiative across Illinois distribution zones.</li>
+        <li>Built Tableau dashboards powered by SQL queries surfacing sales velocity, SKU mix, and distribution gaps for field reps.</li>
+        <li>Defined SQL-driven KPIs tracking account penetration and shelf presence across 3 regional territories.</li>
+      </ul>
+      <div class="tags">
+        <span class="tag">Tableau</span><span class="tag">SQL</span><span class="tag">KPI Design</span><span class="tag">Sales Analytics</span>
+      </div>
+    </div>
+
+    <div class="tl-item fade-in">
+      <p class="tl-meta">2023 · Karachi, Pakistan</p>
+      <p class="tl-company">Sindh IEHS — Public Health</p>
+      <h3 class="tl-role">Data Science Intern</h3>
+      <ul class="tl-bullets">
+        <li>Processed and cleaned emergency health service records to identify response time patterns across districts.</li>
+        <li>Produced data summaries supporting resource allocation decisions for field teams.</li>
+      </ul>
+      <div class="tags">
+        <span class="tag">Python</span><span class="tag">Data Cleaning</span><span class="tag">Public Health</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" style="border-top:1px solid var(--border);">
+  <p class="section-label">Featured Projects</p>
+  <h2 class="section-title">Things I've Built</h2>
+  <p class="section-sub">End-to-end work spanning ML, SQL warehouses, and BI dashboards.</p>
+
+  <div class="projects-grid">
+
+    <div class="project-card fade-in">
+      <span class="proj-icon">🏗️</span>
+      <p class="proj-context">SQL · BI · SaaS Analytics</p>
+      <h3 class="proj-title">SaaS Analytics Warehouse</h3>
+      <p class="proj-desc">Designed a multi-table SQLite analytics warehouse for a SaaS business. Built an interactive Power BI dashboard surfacing churn risk, expansion accounts, and revenue leakage signals.</p>
+      <span class="proj-metric">18% of accounts flagged as payment risk</span>
+      <div class="tags">
+        <span class="tag">SQL</span><span class="tag">Power BI</span><span class="tag">Data Modeling</span><span class="tag">CRM</span>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <span class="proj-icon">🤖</span>
+      <p class="proj-context">Python · Machine Learning · Finance</p>
+      <h3 class="proj-title">LedgerSmart AI</h3>
+      <p class="proj-desc">Production-grade classification and forecasting system for Pakistan Steel Drums processing ~300 monthly ledger transactions. Automated ingestion, categorization, and cash-flow trend reporting for management.</p>
+      <span class="proj-metric">300+ transactions automated monthly</span>
+      <div class="tags">
+        <span class="tag">Python</span><span class="tag">Forecasting</span><span class="tag">Classification</span><span class="tag">Finance</span>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <span class="proj-icon">🎬</span>
+      <p class="proj-context">Python · ML · Recommender Systems</p>
+      <h3 class="proj-title">Netflix Recommender Engine</h3>
+      <p class="proj-desc">End-to-end content-based recommendation system with a modular scoring pipeline. Built a user-input interface generating personalized film recommendations with explainable similarity scores.</p>
+      <span class="proj-metric">Content-based filtering + API interface</span>
+      <div class="tags">
+        <span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">NLP</span><span class="tag">ML</span>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <span class="proj-icon">✈️</span>
+      <p class="proj-context">SQL · ERD · Database Design</p>
+      <h3 class="proj-title">Aurora Air — Airline Simulation DB</h3>
+      <p class="proj-desc">Designed a normalized relational database for a simulated airline covering bookings, routes, passengers, and crew. Implemented complex SQL queries for operational reporting.</p>
+      <span class="proj-metric">Full ERD + 15+ analytical queries</span>
+      <div class="tags">
+        <span class="tag">SQL</span><span class="tag">ERD</span><span class="tag">Database Design</span><span class="tag">Normalization</span>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <span class="proj-icon">📈</span>
+      <p class="proj-context">R · Econometrics · Regression</p>
+      <h3 class="proj-title">GDP Growth Econometrics</h3>
+      <p class="proj-desc">Applied multivariate regression and time-series models in R to analyze GDP growth determinants across emerging economies. Produced publication-style output with diagnostic testing.</p>
+      <span class="proj-metric">OLS + time-series + robustness checks</span>
+      <div class="tags">
+        <span class="tag">R</span><span class="tag">Econometrics</span><span class="tag">Regression</span><span class="tag">Statistics</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" style="border-top:1px solid var(--border);">
+  <p class="section-label">Education</p>
+  <h2 class="section-title">Academic Foundation</h2>
+
+  <div class="edu-card fade-in">
+    <div>
+      <h3 class="edu-school">Knox College</h3>
+      <p class="edu-degree">BA Integrative Business Management · BA Data Science (Dual)</p>
+      <div class="edu-highlights">
+        <span class="edu-badge">Trustees Distinguished Scholarship</span>
+        <span class="edu-badge">GPA: 3.2+ (Upward Trend)</span>
+        <span class="edu-badge">Tennis Club Treasurer</span>
+        <span class="edu-badge">Resident Assistant (2 yrs)</span>
+        <span class="edu-badge">Campus Life Assistant</span>
+      </div>
+    </div>
+    <div class="edu-year">Galesburg, IL<br>Expected June 2026</div>
+  </div>
+
+  <div class="edu-card fade-in" style="margin-top:0;">
+    <div>
+      <h3 class="edu-school" style="font-size:1.05rem;font-family:'Outfit',sans-serif;font-weight:500;">Relevant Coursework</h3>
+      <div class="edu-highlights" style="margin-top:0.5rem;">
+        <span class="edu-badge">Database Systems</span>
+        <span class="edu-badge">Data Mining</span>
+        <span class="edu-badge">Probability & Statistics</span>
+        <span class="edu-badge">Corporate Finance</span>
+        <span class="edu-badge">Machine Learning</span>
+        <span class="edu-badge">Econometrics</span>
+        <span class="edu-badge">Operations Management</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="section-label">Contact</p>
+  <h2 class="section-title" style="max-width:440px;margin:0 auto 0.75rem;">Let's work together.</h2>
+  <p style="color:var(--muted);font-size:0.95rem;max-width:400px;margin:0 auto;">
+    Targeting Data Analyst, Business Analyst, and BI Analyst roles. Available on OPT from June 2026.
+  </p>
+  <div class="contact-links">
+    <a href="mailto:yahyaehtisham2004@gmail.com" class="contact-link">
+      <span class="link-icon">✉</span> yahyaehtisham2004@gmail.com
+    </a>
+    <a href="https://www.linkedin.com/in/yahyaehtisham" class="contact-link" target="_blank">
+      <span class="link-icon">in</span> LinkedIn
+    </a>
+    <a href="https://github.com/yehtisham" class="contact-link" target="_blank">
+      <span class="link-icon">⌥</span> GitHub
+    </a>
+    <a href="YahyaResume.pdf" class="contact-link">
+      <span class="link-icon">↓</span> Resume PDF
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>© <span id="yr"></span> Muhammad Yahya — Built with intention, not templates.</p>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
