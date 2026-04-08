@@ -1,18 +1,3 @@
-# Muhammad Yahya — Data & Business Analyst
+![Banner](https://capsule-render.vercel.app/api?type=waving&color=63d2b9&height=200&section=header&text=Muhammad%20Yahya&fontSize=50&fontColor=ffffff&desc=Data%20%26%20Business%20Analyst&descSize=22&descAlignY=75)
 
-> SQL · Python · BI · Machine Learning · Knox College '26
-
-3 internships across Fortune 50, SaaS, and public health. I build pipelines, dashboards, and ML models that turn messy data into decisions.
-
-**[View Full Portfolio →](https://yehtisham.github.io/Portfolio)**
-
----
-
-### Stack
-`Python` `SQL` `R` `XGBoost` `Tableau` `Power BI` `Looker` `Salesforce`
-
-### Currently
-Seeking Data Analyst / Business Analyst / BI Analyst roles · Available June 2026 · OPT
-
-### Reach me
-[LinkedIn](https://www.linkedin.com/in/yahyaehtisham) · [Email](mailto:yahyaehtisham2004@gmail.com)
+**[→ View My Portfolio](https://yehtisham.github.io/Portfolio)**
