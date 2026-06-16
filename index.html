@@ -718,23 +718,22 @@ footer {
   <p class="tl-company">RainFocus — SaaS Events Platform</p>
   <h3 class="tl-role">Business Systems Administrator</h3>
   <ul class="tl-bullets">
-    <li>Automated recurring financial reporting by building a Python script with Claude that pulled data from Salesforce via API into Excel and generated the reporting formulas, replacing a manual pull-and-build process.</li>
-    <li>Resolved 20+ cross-functional Salesforce configuration requests across Finance, Sales, and IT, using AI to generate formula and validation-rule logic while gathering requirements from stakeholders and validating through UAT.</li>
+    <li>Automated recurring financial reporting by building a Python script with GitHub Copilot that pulled data from Salesforce via API into Excel, replacing a manual pull-and-build process.</li>
+    <li>Resolved 20+ Salesforce configuration tickets across departments and used validation-rule logic while gathering requirements from stakeholders and validating each change through UAT.</li>
   </ul>
   <div class="tags">
-    <span class="tag">Python</span><span class="tag">Claude</span><span class="tag">Salesforce</span><span class="tag">JIRA</span>
+    <span class="tag">Python</span><span class="tag">GitHub Copilot</span><span class="tag">Salesforce</span><span class="tag">JIRA</span>
   </div>
 </div>
 
-   <div class="tl-item fade-in">
+  <div class="tl-item fade-in">
   <p class="tl-meta">2025 · Lehi, UT (Remote)</p>
   <p class="tl-company">RainFocus — SaaS Events Platform</p>
   <h3 class="tl-role">Business Systems Intern</h3>
   <ul class="tl-bullets">
-    <li>Built an <strong>XGBoost account-scoring model</strong> (~68% F1) by engineering temporal-recency and sales-stage features from raw CRM activity, surfacing pre-conversion pipeline signals.</li>
-    <li>Drove faster pipeline prioritization after the <strong>Sales EVP adopted the model's rankings</strong> into weekly review, choosing an internal, editable model over the vendor's black-box system.</li>
-    <li>Engineered the unified <strong>35,000+ row GTM dataset</strong> behind the model by consolidating and deduplicating Salesforce, Marketo, and ZoomInfo records.</li>
-    <li>Packaged the full workflow — imputation, encoding, hyperparameter tuning — into a reproducible scikit-learn pipeline with stratified cross-validation.</li>
+    <li>Built an <strong>XGBoost account-scoring model</strong> (~68% F1) by engineering temporal-recency and sales-stage features from raw CRM activity, working through the feature logic with Gemini to surface pre-conversion pipeline signals from the existing vendor lead-scoring system.</li>
+    <li>Drove faster pipeline prioritization after the <strong>Sales EVP adopted the model's account rankings</strong> into weekly review, choosing an internal, editable model over the vendor's black-box system.</li>
+    <li>Engineered the unified <strong>35,000+ row GTM dataset</strong> behind the model by consolidating and deduplicating Salesforce, Marketo, and ZoomInfo records, using Cursor to refine the pipeline.</li>
   </ul>
   <div class="tags">
     <span class="tag">Python</span><span class="tag">XGBoost</span><span class="tag">Marketo</span><span class="tag">Looker</span>
@@ -746,7 +745,7 @@ footer {
   <p class="tl-company">PepsiCo — Sales & Insights</p>
   <h3 class="tl-role">Sales & Insights Intern</h3>
   <ul class="tl-bullets">
-    <li>Surfaced expansion opportunities across <strong>50+ bakery markets</strong> against a 10%+ revenue target using SQL aggregation and engineered KPIs.</li>
+    <li>Surfaced expansion opportunities across <strong>50+ bakery markets</strong> against a 10%+ revenue target using SQL aggregation with ChatGPT and engineered KPIs.</li>
     <li>Drove leadership to pursue a new target market by building a <strong>Power BI dashboard</strong> over the SQL-aggregated KPIs, surfacing <strong>15+ interested customers</strong> that shaped distribution prioritization.</li>
   </ul>
   <div class="tags">
@@ -781,21 +780,21 @@ footer {
   <div class="projects-grid">
 
     <div class="project-card fade-in">
-      <span class="proj-icon">🏗️</span>
-      <p class="proj-context">SQL · BI · SaaS Analytics</p>
-      <h3 class="proj-title">SaaS Analytics Warehouse</h3>
-      <p class="proj-desc">Designed a SQLite analytics warehouse with 6 SQL views tracking revenue trends, usage behavior, and customer health across 238 accounts, then built an interactive Chart.js dashboard that tiered accounts by health score, surfaced 22 with overdue or written-off invoices, and pinpointed 3 high-usage accounts sitting below revenue threshold as upsell targets.</p>
-      <span class="proj-metric">18% of accounts flagged as payment risk</span>
-      <div class="tags">
-        <span class="tag">SQL</span><span class="tag">Power BI</span><span class="tag">Data Modeling</span><span class="tag">CRM</span>
-      </div>
-    </div>
+  <span class="proj-icon">🏗️</span>
+  <p class="proj-context">SQL · BI · SaaS Analytics</p>
+  <h3 class="proj-title">SaaS Analytics Warehouse</h3>
+  <p class="proj-desc">A SaaS company sitting on 238 customer accounts had no single view of which ones were healthy, at risk, or worth expanding. I built a SQLite analytics warehouse with 6 SQL views to unify revenue, usage, and payment behavior into one health picture, then layered an interactive dashboard on top. The result flagged 22 accounts bleeding overdue or written-off invoices and pinpointed 3 high-usage accounts quietly sitting below their revenue potential — turning a scattered book of accounts into a clear list of who to save and who to grow.</p>
+  <span class="proj-metric">22 at-risk accounts surfaced · 3 upsell targets identified</span>
+  <div class="tags">
+    <span class="tag">SQL</span><span class="tag">Power BI</span><span class="tag">Data Modeling</span><span class="tag">CRM</span>
+  </div>
+</div>
 
-    <div class="project-card fade-in">
+  <div class="project-card fade-in">
   <span class="proj-icon">🤖</span>
   <p class="proj-context">Python · Machine Learning · Finance</p>
   <h3 class="proj-title">LedgerSmart AI</h3>
-  <p class="proj-desc">Production financial platform (FastAPI + React) live in daily use by a trading firm, digitizing $490K in annual transactions across 59 accounts. Replaced manual Excel bookkeeping with a 4-model ML pipeline — classification, SARIMAX forecasting, AR risk scoring, and anomaly detection — plus a Claude-powered assistant. Forecaster flagged a low-revenue month early, prompting a 15% inventory cut that saved the business ~$25,700.</p>
+  <p class="proj-desc">A trading firm was running $490K in annual transactions across 59 accounts entirely on manual Excel bookkeeping. I built and deployed a production financial platform (FastAPI + React) to replace it end to end — architecting a custom ETL layer with Claude Code that ingests raw Excel ledgers into SQLite, served through a FastAPI backend on Render. On top sits a 4-model ML pipeline (classification, SARIMAX forecasting, AR risk scoring, and anomaly detection) and a Claude-powered assistant. When the forecaster flagged a low-revenue month early, the business cut inventory 15% ahead of the downturn — saving ~$25,700.</p>
   <span class="proj-metric">$490K digitized · live in production</span>
   <div class="tags">
     <span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">SARIMAX</span><span class="tag">Forecasting</span><span class="tag">Claude</span>
@@ -803,15 +802,15 @@ footer {
 </div>
 
     <div class="project-card fade-in">
-      <span class="proj-icon">🎬</span>
-      <p class="proj-context">Python · ML · Recommender Systems</p>
-      <h3 class="proj-title">Netflix Recommender Engine</h3>
-      <p class="proj-desc">End-to-end content-based recommendation system with a modular scoring pipeline. Built a user-input interface generating personalized film recommendations with explainable similarity scores.</p>
-      <span class="proj-metric">Content-based filtering + API interface</span>
-      <div class="tags">
-        <span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">NLP</span><span class="tag">ML</span>
-      </div>
-    </div>
+  <span class="proj-icon">🎬</span>
+  <p class="proj-context">Python · ML · Recommender Systems</p>
+  <h3 class="proj-title">Netflix Multi-Method Recommender</h3>
+  <p class="proj-desc">Most recommenders lean on a single method and a black-box score. I built a content-based engine across 8,800+ titles that runs 5 different methods — cosine similarity, kNN, Naïve Bayes, K-Means, and Apriori association rules — into one weighted scoring pipeline, so each captures patterns the others miss. It hit 84% classification accuracy and a 0.659 silhouette score, and I wired in a live OMDb/Google Sheets API so a user can drop in a title and get real-time, explainable recommendations back.</p>
+  <span class="proj-metric">8,800+ titles · 84% accuracy · 5-method ensemble</span>
+  <div class="tags">
+    <span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">NLP</span><span class="tag">Ensemble ML</span>
+  </div>
+</div>
 
 
     <div class="project-card fade-in">
@@ -903,7 +902,7 @@ footer {
     <a href="https://github.com/yehtisham" class="contact-link" target="_blank">
       <span class="link-icon">⌥</span> GitHub
     </a>
-    <a href="M.Yahya_Resume.pdf" class="contact-link">
+    <a href="M.Yahya_Resume.pdf" class="btn-primary">Download Resume</a>
       <span class="link-icon">↓</span> Resume PDF
     </a>
   </div>
